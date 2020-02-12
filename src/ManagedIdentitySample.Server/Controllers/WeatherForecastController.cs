@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -9,6 +9,8 @@ namespace ManagedIdentitySample.Server.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    // Enable this to enable role based authorisation
+    //[Authorize(Roles = "Read")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
